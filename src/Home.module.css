@@ -1,0 +1,25 @@
+.content {
+  width: 100%;
+  margin-top: 10%;
+  height: auto;
+  position: relative;
+} 
+
+.welcome {
+  position: absolute;
+  width: 80%;
+  color: #ededee;
+  font-size: 0.87rem;
+  text-align: justify;
+  padding: 4%;;
+  top: 40%;
+}
+
+.imageHome {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+
