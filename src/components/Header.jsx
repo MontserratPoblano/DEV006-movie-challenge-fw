@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export function Header({ inicio, option1, option2 }) {
+export function Header({ inicio, option1, option2,enlace1,enlace2,enlace3 }) {
   return (
     <header className="header">
       <img
@@ -14,17 +14,17 @@ export function Header({ inicio, option1, option2 }) {
       <nav>
         <ul>
           <li key={1}>
-            <Link to="/" className={styles.link}>
+            <Link to={enlace1} className={styles.link}>
               {inicio}
             </Link>
           </li>
           <li key={2}>
-            <Link to="/SignIn" className={styles.link}>
+            <Link to={enlace2} className={styles.link}>
               {option1}
             </Link>
           </li>
           <li key={3}>
-            <Link to="SignUp" className={styles.link}>
+            <Link to={enlace3} className={styles.link}>
               {option2}
             </Link>
           </li>

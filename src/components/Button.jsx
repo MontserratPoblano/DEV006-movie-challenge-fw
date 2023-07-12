@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function Button() {
   const navigate = useNavigate();
   const handleButtonClick = () => {
-    navigate("/Movies");
+    navigate("/Explora");
   };
 
   return (
