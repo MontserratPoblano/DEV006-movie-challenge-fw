@@ -12,6 +12,9 @@ export function Home() {
      inicio="Inicio"
      option1="Sign Up"
      option2="Sign In"
+     enlace1={"/"}
+     enlace2={"/SignUp"}
+     enlace3={"/SignIn"}
      />
       <main>
         <div className={styles.content}>

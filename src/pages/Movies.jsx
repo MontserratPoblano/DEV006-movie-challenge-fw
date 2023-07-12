@@ -1,5 +1,22 @@
-import styles from "../Movies.module.css";
+
+import { Header } from "../components/Header";
+import { Search } from "../components/Search";
+
+// import { MovieFeature } from "../components/MovieFeature";
 
 export function Movies(){
-    return <div className={styles.titulo}>Movies</div>
+   
+
+    return <div>
+        <Header 
+        inicio="Inicio"
+        option1="Movies"
+        option2="TvShows"
+        enlace1={"/"}
+        enlace2={"/Movies"}
+        enlace3={"/TvShows"}
+        />
+        <Search />
+
+    </div>
 }
