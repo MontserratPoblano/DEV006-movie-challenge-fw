@@ -16,8 +16,7 @@ export function Explora(){
         enlace2={"/Movies"}
         enlace3={"/TvShows"}
         />
-        <MovieFeature 
-        />
+        <MovieFeature />
 
     
     </div>
