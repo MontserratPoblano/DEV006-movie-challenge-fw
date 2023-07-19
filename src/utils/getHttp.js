@@ -7,6 +7,7 @@ const headers = {
 
 const API_SEARCH = "https://api.themoviedb.org/3/search/movie";
 const API_DISCOVER="https://api.themoviedb.org/3/discover/movie";
+const API_GENRES="https://api.themoviedb.org/3/genre/movie/list";
 
 export function getHttpDiscover() {
   return fetch(API_DISCOVER, {
@@ -33,5 +34,21 @@ export function getHttpSearch(searchText) {
     headers,
   }
   ).then((response) => response.json());
+}
+
+ export function getGenres() {
+  return fetch(`${API_GENRES}`,{
+    method: "GET",
+    headers,
+  }
+  ).then((response) => response.json());
+}
+
+export function getMoviesByGenre(genreid){
+return fetch(`${API_DISCOVER}?sort_by=popularity.desc&with_genres=${genreid}`,{
+    method: "GET",
+    headers,
+  }
+).then((response)=>response.json())
 }
 

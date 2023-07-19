@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./MovieFeature.module.css";
 import { getHttpDiscover, getHttpTrailer} from "../utils/getHttp";
-import { renderMovies } from "../utils/renderMovies";
+import { RenderMovies } from "../utils/RenderMovies";
 import { FaPlay } from "react-icons/fa";
 import renderTrailer from "../utils/renderTrailer";
 
@@ -38,7 +38,7 @@ export function MovieFeature() {
 
   
   const showTrailer=renderTrailer(trailer);
-  const listMovies = renderMovies(movies,handleMovieSelection);
+  //const listMovies = renderMovies(movies,handleMovieSelection);
 
   return (
     
@@ -51,7 +51,7 @@ export function MovieFeature() {
         {selectedMovie.overview ? <p className={styles.textOverview}>{selectedMovie.overview}</p> : null}
       </div>
       <h1 className={styles.titleRecomendation} >Películas recomendadas</h1>
-      <ul className={styles.movieGrid}>{listMovies}</ul>
+      <RenderMovies  movies={movies} handleMovieSelection={handleMovieSelection} styles={styles.movieGrid}/>
     </div>
   );
 
