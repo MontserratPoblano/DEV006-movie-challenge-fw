@@ -1,54 +1,37 @@
-import styles from "./Search.module.css";
-import { BsSearchHeart } from "react-icons/bs";
+
+import { getHttpSearch, getMoviesByGenre } from "../utils/getHttp";
+import { RenderMovies } from "../utils/RenderMovies";
+import  Formfilter from "./Formfilter";
 import { useState } from "react";
-import { getHttpSearch } from "../utils/getHttp";
-import { renderMovies } from "../utils/renderMovies";
-//import { useEffect } from "react";
+import styles from "./MovieFeature.module.css";
+
+
 
 export function Search() {
-  const [searchText, setSearchText] = useState("");
-  const [searchMovies, setSearchMovies] = useState([]);
+  const[searchMovies,setSearchMovies]=useState([]);
+  
 
-  const handleChange = ({ target }) => {
-    setSearchText(target.value);
-  };
+const onValuesChanges = (searchText,selectGenre) => {
+  getHttpSearch(searchText).then((data) => {
+    setSearchMovies(data.results);
+  });
+  getMoviesByGenre(selectGenre).then((data) => {
+    console.log(data.results)
+    setSearchMovies(data.results);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    getHttpSearch(searchText).then((data) => {
-      console.log(data.results);
-      setSearchMovies(data.results);
-      setSearchText("");
-    });
-  };
+  });
+};
 
- 
-  const totalMovies = renderMovies(searchMovies, () => {});
+const handleMovieSelection=()=>{
+};
 
   return (
     <div>
-      <form className={styles.container} onSubmit={handleSubmit}>
-        <div className={styles.searchBox}>
-          <input
-            type="text"
-            placeholder="Search"
-            maxLength="25"
-            className={styles.searchInput}
-            value={searchText}
-            onChange={handleChange}
-          />
-          <button className={styles.buttonSearch} type="submit" >
-            <BsSearchHeart />
-          </button>
-        </div>
-      </form>
-      <div>
-        <ul className={styles.movieGrid}>
-          {totalMovies.length > 0
-            ? totalMovies
-            : "You haven't performed a search yet...."}
-        </ul>
-      </div>
+      <Formfilter onValuesChanges={onValuesChanges} />
+       <div>
+        <RenderMovies movies={searchMovies}  handleMovieSelection={handleMovieSelection} styles={styles.movieGrid}/>
+      </div> 
+      
     </div>
   );
 }

@@ -2,11 +2,8 @@
 import { Header } from "../components/Header";
 import { Search } from "../components/Search";
 
-// import { MovieFeature } from "../components/MovieFeature";
 
 export function Movies(){
-   
-
     return <div>
         <Header 
         inicio="Inicio"
@@ -17,6 +14,8 @@ export function Movies(){
         enlace3={"/TvShows"}
         />
         <Search />
+        
+
 
     </div>
 }
