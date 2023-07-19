@@ -32,20 +32,11 @@ function Formfilter({onValuesChanges}) {
 
   };
 
-//   const handleGenreChange = ({ target }) => {
-//     console.log(target.getAttribute("data-id"))
-//     console.log(target.value)
-
-//   };
-
-    // setSelectGenre(target.value);
-//   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onValuesChanges(searchText,selectGenre);
-    setSearchText("");
+     setSearchText("");
     e.target.reset()
 
   };
