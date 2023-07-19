@@ -12,15 +12,20 @@ export function Search() {
   
 
 const onValuesChanges = (searchText,selectGenre) => {
+  if(searchText !==""){
   getHttpSearch(searchText).then((data) => {
     setSearchMovies(data.results);
   });
+}else if(selectGenre !==null){
   getMoviesByGenre(selectGenre).then((data) => {
-    console.log(data.results)
     setSearchMovies(data.results);
 
   });
-};
+}
+else{
+  setSearchMovies([])
+}
+}
 
 const handleMovieSelection=()=>{
 };
