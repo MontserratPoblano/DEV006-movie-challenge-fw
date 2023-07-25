@@ -1,10 +1,11 @@
-// import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Explora } from "./pages/Explora";
 import { Movies } from "./pages/Movies";
 import { TvShows } from "./pages/TvShows";
 import { NotFound } from "./pages/NotFound";
+import { Details } from "./pages/Details";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/Explora" element={<Explora />} />
         <Route path="/Movies" element={<Movies />} />
         <Route path="/TvShows" element={<TvShows />} />
-
+        <Route path="/Movies/:movieId" element={<Details />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

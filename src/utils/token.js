@@ -1,0 +1,1 @@
+export const API_TOKEN = import.meta.env.VITE_REACT_API_TOKEN;

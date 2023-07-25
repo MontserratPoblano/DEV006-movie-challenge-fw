@@ -1,4 +1,5 @@
-import styles from "../Home.module.css";
+import React from "react";
+import styles from "../pages/Home.module.css";
 import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 

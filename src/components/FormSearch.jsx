@@ -5,7 +5,7 @@ import styles from "../components/Filtrado.module.css";
 import { BsSearchHeart } from "react-icons/bs";
 
 
-function Formfilter({onValuesChanges}) {
+function FormSearch({onValuesChanges}) {
   const [genres, setGenres] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [selectGenre, setSelectGenre]=useState(null)
@@ -37,6 +37,7 @@ function Formfilter({onValuesChanges}) {
     e.preventDefault();
     onValuesChanges(searchText,selectGenre);
      setSearchText("");
+     setSelectGenre(null);
     e.target.reset()
 
   };
@@ -82,4 +83,4 @@ function Formfilter({onValuesChanges}) {
   );
 }
 
-export default Formfilter
+export default FormSearch;

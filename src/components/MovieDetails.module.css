@@ -1,0 +1,73 @@
+.backImage{
+    
+    background-position:top center;
+    background-size: cover;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-end;
+    padding: 10px;
+    opacity: 0.9;
+    position: relative;
+    width: 100%;
+   
+}
+
+.container{
+    min-width: 100%;
+    max-height: 500px;
+    position: absolute;
+    top:23%;
+    left: 0%;
+}
+
+.movieTitle{
+    font-size: 1.5rem;
+    color: #ededed;
+    margin: 5px 0 4px 0;
+}
+
+.faIcon{
+    color:#e6621f;
+}
+.btnTrailer{
+    background-color: #000;
+    color: #898989;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+    font-weight: bolder;
+    width: 70px;
+   
+}
+
+.textOverview{
+    font-size: 0.7rem;
+    color:white;  
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 40px;
+    overflow:scroll;
+    text-overflow: ellipsis;
+    margin: 5px;
+    padding: 3px;
+ 
+}
+
+
+.btnTrailerClose{
+    position:absolute;
+    z-index:10;
+    top:2%;
+    left:70%;
+    bottom: 10px;
+    background-color: #000;
+    color: #898989;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+    font-weight: bolder;
+    width: 70px;
+   
+   
+}
