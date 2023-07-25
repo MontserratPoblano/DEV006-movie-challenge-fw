@@ -9,43 +9,6 @@
 
 
 
-.backImage{
-    
-    background-position:top center;
-    background-size: cover;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    justify-content: flex-end;
-    padding: 10px;
-    opacity: 0.9;
-}
-
-.movieTitle{
-    font-size: 1.5rem;
-    color: #ededed;
-    margin: 5px 0 5px 0;
-}
-
-.faIcon{
-    color:#e6621f;
-}
-.btnTrailer{
-    background-color: #000;
-    color: #898989;
-    height: 30px;
-    border-radius: 5px;
-    font-size: 0.6rem;
-    font-weight: bolder;
-    width: 70px;
-}
-
-.textOverview{
-    font-size: 0.7rem;
-    color:white;  
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 .titleRecomendation{
     font-size: 0.9rem;

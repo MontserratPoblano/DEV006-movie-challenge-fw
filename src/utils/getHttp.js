@@ -1,5 +1,5 @@
-const API_TOKEN = import.meta.env.VITE_REACT_API_TOKEN;
-//const API_KEY =  import.meta.env.VITE_REACT_API_KEY;
+import { API_TOKEN } from "./token"
+
 const headers = {
   Authorization: API_TOKEN,
   accept: "application/json",
@@ -52,3 +52,12 @@ return fetch(`${API_DISCOVER}?sort_by=popularity.desc&with_genres=${genreid}`,{
 ).then((response)=>response.json())
 }
 
+
+export function getHttpMovie(id) {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}`,{
+    method: "GET",
+    headers,
+  }
+  ).then((response) => response.json())
+}

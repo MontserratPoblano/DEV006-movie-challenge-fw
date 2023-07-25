@@ -1,25 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import styles from "./MovieFeature.module.css";
-import { getHttpDiscover, getHttpTrailer} from "../utils/getHttp";
-import { RenderMovies } from "../utils/RenderMovies";
-import { FaPlay } from "react-icons/fa";
-import renderTrailer from "../utils/renderTrailer";
+import { getHttpDiscover, getHttpTrailer } from "../utils/getHttp";
+import { RenderMovies } from "../components/RenderMovies";
+import { MovieDetails } from "../components/MovieDetails";
 
 export function MovieFeature() {
   const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState({
-    title: "Loading Movies",
-  });
-  const[trailer,setTrailer]=useState(null)
-  const[play,setPlay]=useState(false)
- 
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [trailer, setTrailer] = useState(null);
+
   useEffect(() => {
     getHttpDiscover().then((data) => {
       setMovies(data.results);
     });
   }, []);
-
 
   useEffect(() => {
     if (movies.length > 0) {
@@ -27,32 +22,32 @@ export function MovieFeature() {
     }
   }, [movies]);
 
-  
+  useEffect(()=>{
+    if(selectedMovie){
+      getHttpTrailer(selectedMovie.id).then((result) => {
+        setTrailer(result);
+      });
+    }
+  },[selectedMovie])
 
-  const handleMovieSelection=(movie)=>{
-    setSelectedMovie(movie)
-    getHttpTrailer(movie.id).then((result)=>{
-     setTrailer(result)
-    })
-  }
+  const handleMovieSelection = (movie) => {
+    setSelectedMovie(movie);
+    
+  };
 
   
-  const showTrailer=renderTrailer(trailer);
-  //const listMovies = renderMovies(movies,handleMovieSelection);
 
   return (
-    
-    <div className={styles.container} >
-      <div className={styles.backImage} style={{ 
-      backgroundImage: `url("https://image.tmdb.org/t/p/w400${selectedMovie.backdrop_path}")`}}>
-        {trailer && play ? showTrailer : null}
-        <button className={styles.btnTrailer} onClick={()=>setPlay(true)}><FaPlay className={styles.faIcon}/>Play Trailer</button>
-        <h1 className={styles.movieTitle}>{selectedMovie.title}</h1>
-        {selectedMovie.overview ? <p className={styles.textOverview}>{selectedMovie.overview}</p> : null}
+    <div className={styles.container}>
+      <div>
+        {selectedMovie ?  <MovieDetails selectedMovie={selectedMovie} trailer={trailer} /> : <p>No found</p>}
       </div>
-      <h1 className={styles.titleRecomendation} >Películas recomendadas</h1>
-      <RenderMovies  movies={movies} handleMovieSelection={handleMovieSelection} styles={styles.movieGrid}/>
+      <h1 className={styles.titleRecomendation}>Películas recomendadas</h1>
+      <RenderMovies
+        movies={movies}
+        handleMovieSelection={handleMovieSelection}
+        styles={styles.movieGrid}
+      />
     </div>
   );
-
-      }
+}

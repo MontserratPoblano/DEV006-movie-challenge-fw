@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import { MovieCard } from "../components/MovieCard";
+import { MovieCard } from "./MovieCard";
 
 export const RenderMovies = ({ movies, handleMovieSelection, styles }) => {
+ 
   return (
-    <ul className={styles}>
+    movies.length >0 ? ( <ul className={styles}>
       {movies.map((movie) => (
         <MovieCard
           key={movie.id}
@@ -11,6 +12,7 @@ export const RenderMovies = ({ movies, handleMovieSelection, styles }) => {
           setSelectedMovie={handleMovieSelection}
         />
       ))}
-    </ul>
+    </ul>) : <p style={{ color: '#898989' } }>you have not made any search</p>
+   
   );
 };

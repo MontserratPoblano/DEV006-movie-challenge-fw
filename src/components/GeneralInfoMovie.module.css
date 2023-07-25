@@ -1,0 +1,35 @@
+.container{
+display: flex;
+
+}
+
+.imagen{
+    
+    object-fit: cover;
+    margin:auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+.title{
+color: #898989;
+text-transform: capitalize;
+padding: 5px;
+font-size: 1.2rem;
+
+}
+
+.paragraph{
+color: #898989;
+text-transform: capitalize;
+padding: 5px;
+font-size: 0.75rem;
+
+}
+
+.list{
+    color: #898989;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
