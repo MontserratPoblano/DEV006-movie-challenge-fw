@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getHttpTrailer, getHttpMovie } from "../utils/getHttp";
@@ -7,30 +8,34 @@ import styles from "./MovieDetailsTotal.module.css";
 
 export function MovieDetailsTotal() {
   let { movieId } = useParams();
-  const [selectedMovie, setSelectedMovie] = useState({
-    title: "Loading Movies",
-  });
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [trailer, setTrailer] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getHttpMovie(movieId).then((result) => {
-      setSelectedMovie(result);
-    }).catch((error)=>{
-      console.log(error)
-    })
+    Promise.all([getHttpMovie(movieId), getHttpTrailer(movieId)])
+      .then(([movieResult, trailerResult]) => {
+        setSelectedMovie(movieResult);
+        setTrailer(trailerResult);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
   }, [movieId]);
 
-  useEffect(() => {
-    getHttpTrailer(movieId).then((result) => {
-      console.log(result)
-      setTrailer(result);
-    }).catch((error)=>{
-      console.log(error)
-    });
-  }, [movieId]);
+  
+  if (loading) {
+    return <div>Loading</div>;
+  }
+  if (error) {
+    return <div>Error:{error}</div>;
+  }
 
-  if(!selectedMovie){
-    return <div>Loading....</div>
+  if (!selectedMovie) {
+    return null;
   }
 
   return (
@@ -38,8 +43,11 @@ export function MovieDetailsTotal() {
       <div className={styles.general}>
         <RenderTrailer styles={styles.containerYoutube} trailer={trailer} />
       </div>
- 
-      <GeneralInfoMovie selectedMovie={selectedMovie} category={selectedMovie.genres} />
+
+      <GeneralInfoMovie
+        selectedMovie={selectedMovie}
+        category={selectedMovie.genres}
+      />
     </div>
   );
 }

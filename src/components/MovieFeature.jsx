@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import React from "react";
 import { useEffect, useState } from "react";
 import styles from "./MovieFeature.module.css";
 import { getHttpDiscover, getHttpTrailer } from "../utils/getHttp";
