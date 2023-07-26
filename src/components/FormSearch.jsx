@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+import React from "react";
 import { useState, useEffect } from "react";
 import { getGenres } from "../utils/getHttp";
-import styles from "../components/Filtrado.module.css";
+import styles from "../components/FormSearch.module.css";
 import { BsSearchHeart } from "react-icons/bs";
 
 
@@ -48,8 +49,12 @@ function FormSearch({onValuesChanges}) {
     <div>
       <form className={styles.container} onSubmit={handleSubmit}>
         <div className={styles.searchBox}>
+        <label className={styles.label} htmlFor="search">
+          Search
+        </label>
           <input
             type="text"
+            id="search"
             placeholder="Search"
             maxLength="25"
             className={styles.searchInput}
@@ -74,7 +79,6 @@ function FormSearch({onValuesChanges}) {
         <datalist id="category" value={selectGenre} >
           {genres.map((genre, index) => (
             <option key={index} data-id={genre.id} value={genre.name}>
-              {genre.name}
             </option>
           ))}
         </datalist>

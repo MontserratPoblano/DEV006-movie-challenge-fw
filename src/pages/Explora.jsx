@@ -1,4 +1,4 @@
-
+import React from "react";
 import { MovieFeature } from "../components/MovieFeature";
 import { Header } from "../components/Header";
 

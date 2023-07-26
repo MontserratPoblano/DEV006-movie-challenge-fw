@@ -1,3 +1,3 @@
 export function SignIn() {
-  return <div>En reparación</div>;
+  return <div style={{ color: '#898989' } }>En reparación</div>;
 }

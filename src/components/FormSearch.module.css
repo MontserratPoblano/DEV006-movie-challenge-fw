@@ -30,19 +30,20 @@
     border-radius: 10px;
     outline: 0;
     width: 60%;
-    height: 30px;
+    height: 25px;
     background-color: #ededed;
     border: #ededed;
-    padding: 5px;
+    padding: 3px;
+    margin: 10px;
 }
 
 .buttonSearch{
     border:none;
     background-color:none;
-    height: 90%;
+    height: 58%;
     position: absolute;
-    top:10%;
-    right:22%;
+    top:23%;
+    right:12%;
     cursor: pointer;
     color:#e6621f;
     font-size: 25px;
