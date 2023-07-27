@@ -1,35 +1,44 @@
-.container{
-display: flex;
-
-}
-
-.imagen{
+ .container{
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 100%;
+    width: 100%;
     
-    object-fit: cover;
-    margin:auto;
-    padding: 10px;
-    border-radius: 10px;
-}
-.title{
-color: #898989;
-text-transform: capitalize;
-padding: 5px;
-font-size: 1.2rem;
-
-}
-
-.paragraph{
-color: #898989;
-text-transform: capitalize;
-padding: 5px;
-font-size: 0.75rem;
-
-}
-
-.list{
+    }
+    
+    .imagen{
+        
+        object-fit: contain;
+        height: 200px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .title{
     color: #898989;
     text-transform: capitalize;
-    text-decoration: none;
-    font-size: 0.75rem;
-}
+    padding: 5px;
+    font-size: 1.4rem;
+    
+    }
+    
+    .paragraph{
+    color: #898989;
+    text-transform: capitalize;
+    padding: 5px;
+    font-size: 0.95rem;
+    
+    }
+    
+    .list {
+        color: #898989;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-size: 0.85rem;
+        width: 55%;
+        padding: 5px;
+        
+    }
 
+
+    
+    

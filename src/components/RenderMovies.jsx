@@ -13,7 +13,7 @@ export const RenderMovies = ({ movies, handleMovieSelection, styles }) => {
           setSelectedMovie={handleMovieSelection}
         />
       ))}
-    </ul>) : <p style={{ color: '#898989' } }>you have not made any search</p>
+    </ul>) : <p style={{ color: '#898989', padding: '20px' } }>you have not made any search</p>
    
   );
 };

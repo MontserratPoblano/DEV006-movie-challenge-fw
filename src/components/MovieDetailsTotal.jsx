@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getHttpTrailer, getHttpMovie } from "../utils/getHttp";
@@ -22,7 +22,7 @@ export function MovieDetailsTotal() {
       })
       .catch((error) => {
         setError(error);
-        setLoading(false);
+        //setLoading(false);
       });
   }, [movieId]);
 
@@ -39,15 +39,14 @@ export function MovieDetailsTotal() {
   }
 
   return (
-    <div>
+    <>
       <div className={styles.general}>
         <RenderTrailer styles={styles.containerYoutube} trailer={trailer} />
-      </div>
-
-      <GeneralInfoMovie
+        <GeneralInfoMovie
         selectedMovie={selectedMovie}
         category={selectedMovie.genres}
-      />
-    </div>
+        />
+      </div> 
+    </>
   );
 }
