@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+// import React from "react";
 import Styles from "./GeneralInfoMovie.module.css";
 
 export function GeneralInfoMovie({ selectedMovie,category }) {
@@ -23,8 +23,8 @@ export function GeneralInfoMovie({ selectedMovie,category }) {
             <li key={index}>{genre.name}</li>
           ))) : (<p className={Styles.paragraph}>Genre not available</p>)}
         </ul>
-        <p className={Styles.paragraph}>Original language:{selectedMovie.original_language}</p>
-        <p className={Styles.paragraph}>Duration:{selectedMovie.runtime}min</p>
+        <p className={Styles.paragraph}>Original language: {selectedMovie.original_language}</p>
+        <p className={Styles.paragraph}>Duration:  {selectedMovie.runtime}min</p>
       </div>
     </div>
   );

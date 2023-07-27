@@ -9,7 +9,7 @@ export function Header({ inicio, option1, option2,enlace1,enlace2,enlace3 }) {
     <header className="header">
       <img
         className={styles.logoImage}
-        src="./src/images/logo.png"
+        src="./src/images/logo2.png"
         alt="Logo"
       />
       <nav>

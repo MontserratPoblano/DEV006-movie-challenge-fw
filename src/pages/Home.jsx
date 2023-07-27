@@ -3,9 +3,6 @@ import styles from "../pages/Home.module.css";
 import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 
-
-
-
 export function Home() {
   return (
     <div>
@@ -24,12 +21,12 @@ export function Home() {
             src="./src/images/principal2.jpg"
             alt="Familia viendo peliculas"
           />
-        </div>
         <p className={styles.welcome}>
           ¡Bienvenido a Junior films! Descubre la magia del cine con solo un
           clic. Lo mejor de todo no necesitas supscripción
         </p>
           <Button />
+          </div>
       </main>
     </div>
   );

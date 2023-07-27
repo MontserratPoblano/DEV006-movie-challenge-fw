@@ -1,9 +1,7 @@
-import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-//import "@testing-library/jest-dom";
 import '@testing-library/jest-dom/extend-expect';
 import { MovieDetails } from "../components/MovieDetails";
-//import YouTube from 'react-youtube';
+
 
 
 

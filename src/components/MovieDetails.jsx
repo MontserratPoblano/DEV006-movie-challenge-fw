@@ -15,19 +15,20 @@ export function MovieDetails({ selectedMovie, trailer }) {
       <div
         className={styles.backImage}
         style={{
-          backgroundImage: `url("https://image.tmdb.org/t/p/w400${selectedMovie.backdrop_path}")`,
+          backgroundImage: `url("https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path}")`,
         }}
       >
         <h1 className={styles.movieTitle}>{selectedMovie.title}</h1>
         {selectedMovie.overview ? (
           <p className={styles.textOverview}>{selectedMovie.overview}</p>
-        ) : null}
+        ) : <p className={styles.textOverview}>Not found</p>}
       </div>
-      <div className={styles.container}>
       <button className={styles.btnTrailer} onClick={() => setPlay(true)}>
           <FaPlay className={styles.faIcon} />
           Play Trailer
         </button>
+      <div className={styles.container}>
+     
         {trailer && play ? (
           <RenderTrailer
             trailer={trailer}
