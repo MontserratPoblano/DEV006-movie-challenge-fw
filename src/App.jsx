@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { HashRouter, Route, Routes} from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Explora } from "./pages/Explora";
 import { Movies } from "./pages/Movies";
@@ -9,7 +9,8 @@ import { Details } from "./pages/Details";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
+  
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/SignUp" element={<TvShows />} />
@@ -20,7 +21,8 @@ function App() {
         <Route path="/Movies/:movieId" element={<Details />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+
+   </HashRouter>
   );
 }
 
